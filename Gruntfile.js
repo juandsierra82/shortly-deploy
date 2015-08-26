@@ -27,6 +27,10 @@ module.exports = function(grunt) {
 
     uglify: {
       //your code here
+      dist: {
+        src: './public/client/build/production.js',
+        dest: './public/client/build/production.min.js'
+      }
     },
 
     jshint: {
@@ -107,7 +111,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     //your code here
-    'concat'
+    'concat', 'uglify'
   ]);
 
   //can be used to auto-deploy.
