@@ -116,6 +116,9 @@ Shortly.Links = Backbone.Collection.extend({
   url: '/links'
 });
 
+
+//Hello
+
 Shortly.LinksView = Backbone.View.extend({
   className: 'links',
 
@@ -138,6 +141,7 @@ Shortly.LinksView = Backbone.View.extend({
     this.$el.append(view.render().el);
   }
 });
+//concat me
 
 Shortly.Router = Backbone.Router.extend({
   initialize: function(options){
@@ -167,4 +171,5 @@ Shortly.Router = Backbone.Router.extend({
   }
 });
 
-//run the tests sure.
+//changing
+

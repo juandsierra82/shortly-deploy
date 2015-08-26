@@ -88,9 +88,9 @@ module.exports = function(grunt) {
       server: {
         //your code here
         files: [
-        'public/**/*.js'
+         'public/**/*.js'
         ],
-        task: ['jshint'],
+        tasks: ['jshint','mochaTest'],
         options: {
           spawn: false
         }
