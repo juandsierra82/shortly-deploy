@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       //your code here
-      dist: {
+      blah: {
         src: ['./public/client/*.js'],
         dest: './public/client/build/production.js'
       }
@@ -36,6 +36,7 @@ module.exports = function(grunt) {
     jshint: {
       files: [
         // Add filespec list here
+        'app/**/*.js', 'public/client/**/*.js', '*.js'
       ],
       options: {
         force: 'true',
@@ -111,7 +112,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     //your code here
-    'concat', 'uglify'
+    'concat', 'uglify', 'jshint'
   ]);
 
   //can be used to auto-deploy.
