@@ -50,6 +50,16 @@ module.exports = function(grunt) {
 
     cssmin: {
       //your code here
+        target: {
+          files: [{
+            expand: true,
+            cwd: 'public/',
+            src: ['style.css'],
+            dest: 'public/client/build/',
+            ext: '.min.css',
+            extDot: 'first'
+          }]
+        }
     },
 
     watch: {
@@ -112,7 +122,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     //your code here
-    'concat', 'uglify', 'jshint'
+    'concat', 'uglify', 'jshint', 'cssmin'
   ]);
 
   //can be used to auto-deploy.
