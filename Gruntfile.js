@@ -62,6 +62,8 @@ module.exports = function(grunt) {
         }
     },
 
+
+
     watch: {
       scripts: {
         files: [
@@ -71,20 +73,33 @@ module.exports = function(grunt) {
         tasks: [
           'concat',
           'uglify'
-        ]
+        ],
+        options: {
+          spawn: false
+        }
       },
       css: {
         files: 'public/*.css',
-        tasks: ['cssmin']
+        tasks: ['cssmin'],
+        options: {
+          spawn: false
+        }
       },
       server: {
         //your code here
+        files: [
+        'public/**/*.js'
+        ],
+        task: ['jshint'],
+        options: {
+          spawn: false
+        }
       }
     },
 
     shell: {
       prodServer: {
-        //can be used to auto-deploy to Heroku/Azure.
+        command: 'git push heroku master'
       }
     },
   });
@@ -137,7 +152,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
+     'shell'
   ]);
+
 
 
 };

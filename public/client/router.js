@@ -1,6 +1,9 @@
 Shortly.Router = Backbone.Router.extend({
   initialize: function(options){
     this.$el = options.el;
+    if(true){
+      //I should run;
+    }
   },
 
   routes: {
@@ -22,3 +25,5 @@ Shortly.Router = Backbone.Router.extend({
     this.swapView(new Shortly.createLinkView());
   }
 });
+
+//run the tests sure.
