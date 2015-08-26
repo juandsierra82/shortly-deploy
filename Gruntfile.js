@@ -4,6 +4,10 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       //your code here
+      dist: {
+        src: ['./public/client/*.js'],
+        dest: './public/client/build/production.js'
+      }
     },
 
     mochaTest: {
@@ -103,6 +107,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     //your code here
+    'concat'
   ]);
 
   //can be used to auto-deploy.
